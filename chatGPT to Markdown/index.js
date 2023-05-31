@@ -49,7 +49,7 @@
                     contentMD += "\n```"
                         + child.querySelector(".items-center span").innerHTML
                         + "\n"
-                        + child.querySelector("code").innerHTML.replace(/<[^>]*>/g, "")
+                        + child.querySelector("code").outerText
                         + "```\n\n";
                     break;
 
