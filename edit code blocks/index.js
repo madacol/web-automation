@@ -14,7 +14,7 @@
 (function() {
     'use strict';
 
-    document.querySelectorAll(':has(> code)').forEach((code_block) => {
+    document.querySelectorAll('pre').forEach((code_block) => {
         code_block.contentEditable = true;
         code_block.spellcheck = false;
     })
