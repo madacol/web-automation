@@ -53,13 +53,21 @@
                         + "```\n\n";
                     break;
 
-                case "ol":
+                case "ol": {
                     const liElements = child.querySelectorAll("li");
                     for (let i = 0; i < liElements.length; i++) {
                         contentMD += `${i + 1}. ${liElements[i].textContent}\n\n`;
                     }
                     break;
+                }
 
+                case "ul": {
+                    const liElements = child.querySelectorAll("li");
+                    for (let liElement of liElements) {
+                        contentMD += `- ${liElement.innerHTML}\n\n`;
+                    }
+                    break;
+                }
                 case "table":
                     const headers = [...child.querySelectorAll("th")].map(header => header.textContent.trim());
                     const rows = [...child.querySelectorAll("tbody tr")]
@@ -69,12 +77,12 @@
                     const headersMD = `| ${headers.join(" | ")} |\n|${headers.map(() => "-----").join("|")}|`;
                     const rowsMD = rows.map(row => `| ${row.join(" | ")} |`).join("\n");
 
-                    const markdownTable = `${headersMD}\n${rowsMD}\n\n`;
-                    contentMD += markdownTable;
+                    contentMD += `${headersMD}\n${rowsMD}\n\n`;
                     break;
 
                 default:
                     console.error(`Unknown element: ${child.localName}`);
+                    contentMD += child.innerHTML + "\n\n";
                     break;
             }
         }
