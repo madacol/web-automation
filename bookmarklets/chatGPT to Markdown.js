@@ -47,7 +47,7 @@
                     break;
 
                 case "pre":
-                    contentMD += "\n```"
+                    contentMD += "```"
                         + child.querySelector(".items-center span").innerHTML
                         + "\n"
                         + child.querySelector("code").outerText
