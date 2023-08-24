@@ -69,7 +69,7 @@
                     }
                     break;
                 }
-                case "table":
+                case "table": {
                     const headers = [...child.querySelectorAll("th")].map(header => header.textContent.trim());
                     const rows = [...child.querySelectorAll("tbody tr")]
                         .map(row =>
@@ -80,6 +80,7 @@
 
                     contentMD += `${headersMD}\n${rowsMD}\n\n`;
                     break;
+                }
 
                 default:
                     console.error(`Unknown element: ${child.localName}`);
