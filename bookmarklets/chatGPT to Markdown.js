@@ -22,7 +22,8 @@
         /**
          * Human messages
          */
-        contentMD += `## HUMAN:\n\n${humanMsg.querySelector('.break-words').innerHTML}\n\n`;
+
+        contentMD += `## HUMAN:\n\n${humanMsg.querySelector('.break-words').outerText.replace(/([^\n])(\n[^\n])/, "$1\\$2")}\n\n`;
 
 
         /**
