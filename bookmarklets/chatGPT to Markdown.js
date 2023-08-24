@@ -102,7 +102,7 @@
 
                 default:
                     console.error(`Unknown element: ${child.localName}`);
-                    contentMD += child.innerHTML + "\n\n";
+                    contentMD += child.outerHTML + "\n\n";
                     break;
             }
         }
