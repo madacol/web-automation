@@ -81,6 +81,24 @@
                     contentMD += `${headersMD}\n${rowsMD}\n\n`;
                     break;
                 }
+                case "h1":
+                    contentMD += "## "
+                        + child.innerHTML
+                        + "\n\n";
+                    break;
+                case "h2":
+                    contentMD += "### "
+                        + child.innerHTML
+                        + "\n\n";
+                    break;
+                case "h3":
+                    contentMD += "#### "
+                        + child.innerHTML
+                        + "\n\n";
+                    break;
+                case "hr":
+                    contentMD += "---\n\n";
+                    break;
 
                 default:
                     console.error(`Unknown element: ${child.localName}`);
