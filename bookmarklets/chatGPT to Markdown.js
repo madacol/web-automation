@@ -10,7 +10,7 @@
     }
 
     if (humanMsgs.length != chatGPTMsgs.length) {
-        return alert("count mismatch. \n humanMsgs: ${humanMsgs.length}\n chatGPTMsgs: ${chatGPTMsgs.length}`");
+        return alert(`count mismatch. \n humanMsgs: ${humanMsgs.length}\n chatGPTMsgs: ${chatGPTMsgs.length}`);
     }
 
     let title = document.querySelector("title").innerHTML;
