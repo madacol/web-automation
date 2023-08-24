@@ -22,9 +22,11 @@
         /**
          * Human messages
          */
+        contentMD += "## HUMAN:\n\n";
 
-        contentMD += `## HUMAN:\n\n${humanMsg.querySelector('.break-words').outerText.replace(/([^\n])(\n[^\n])/, "$1\\$2")}\n\n`;
-
+        for (let child of humanMsg.querySelector('.break-words').children) {
+            contentMD += child.outerText + "\n\n";
+        }
 
         /**
          * ChatGPT messages
