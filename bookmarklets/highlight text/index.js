@@ -24,6 +24,8 @@ javascript: (function() {
             nodeRange.deleteContents();
             nodeRange.insertNode(highlightedNode);
         }
+
+        selection.empty();
     }
 
     /**
