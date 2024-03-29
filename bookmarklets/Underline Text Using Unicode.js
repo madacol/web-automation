@@ -1,5 +1,5 @@
 // @name Underline Text Using Unicode
-// @description Underlines the selected text in inputs or textareas using Unicode combining characters. Each character in the selection is combined with the Unicode character U+0332 (COMBINING LOW LINE) to simulate underlining.
+// @description Underlines selected texts in inputs and textareas. Each character in the selection is combined with the Unicode character U+0332 (COMBINING LOW LINE) to simulate underlining.
 
 (function() {
     /** @type {HTMLInputElement | HTMLTextAreaElement} */
