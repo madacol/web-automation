@@ -1,3 +1,6 @@
+// @name Js to Bookmarklet
+// @description Minify selected JavaScript code and create a bookmarklet link.
+
 javascript:(function(){
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/terser/dist/bundle.min.js';
@@ -9,7 +12,6 @@ javascript:(function(){
         const selection = window.getSelection ? window.getSelection().toString() : document.selection.createRange().text;
         if (!selection) return alert("Please select some JavaScript code to minify.");
         const minified = await Terser.minify(selection);
-        console.log(minified.code);
 
         /**
          * Create modal with minified code
