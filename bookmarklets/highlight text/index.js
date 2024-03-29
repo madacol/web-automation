@@ -1,10 +1,10 @@
 javascript: (function() {
     let selection = window.getSelection();
-    if (selection.rangeCount > 0) {
-        let range = selection.getRangeAt(0);
-
-        /* Create a mark element for highlighting */
-        let mark = document.createElement('mark');
+    if (selection?.toString() === "") {
+        return alert('Please select some text on the page.');
+    }
+    for (let j = 0; j < selection.rangeCount; j++) {
+        const range = selection.getRangeAt(j);
 
         /* Split the range for each text node within the selection */
         let selectedRanges = splitRangeForEachNode(range);
@@ -18,15 +18,15 @@ javascript: (function() {
             }
 
             let textNode = document.createTextNode(selectedText);
-            let highlightedNode = mark.cloneNode();
+            let highlightedNode = document.createElement('mark');
             highlightedNode.appendChild(textNode);
 
             nodeRange.deleteContents();
             nodeRange.insertNode(highlightedNode);
         }
-
-        selection.empty();
     }
+
+    selection.empty();
 
     /**
      * Helper function to retrieve a range for each text node within a range
