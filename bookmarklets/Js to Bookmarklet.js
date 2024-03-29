@@ -11,7 +11,7 @@ javascript:(function(){
          */
         const selection = window.getSelection ? window.getSelection().toString() : document.selection.createRange().text;
         if (!selection) return alert("Please select some JavaScript code to minify.");
-        const minified = await Terser.minify(selection);
+        const minified = await Terser.minify(selection).catch(e => alert(`Error: ${e.message}`));
 
         /**
          * Create modal with minified code
