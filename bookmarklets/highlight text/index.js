@@ -1,3 +1,6 @@
+// @name Highlight Text
+// @description Highlights the selected texts on the page by wrapping them in <mark> tags.
+
 javascript: (function() {
     let selection = window.getSelection();
     if (selection?.toString() === "") {
