@@ -16,8 +16,7 @@
                 case 'date':
                 case 'number':
                 case 'select-one':
-                    const value = JSON.stringify(element.value);
-                    scriptCode.push(`${codeToRecoverElement}.value = ${value};`);
+                    scriptCode.push(`${codeToRecoverElement}.value = ${element.value};`);
                     break;
                 case 'checkbox':
                 case 'radio':
