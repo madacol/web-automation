@@ -5,10 +5,8 @@
     const scriptCode = ['(() => {'];
     [...document.forms].forEach((form, formIndex) => {
         [...form.elements].forEach((element, elementIndex) => {
-            if (!element?.name) return; // Skip elements without a name
-
             const elementType = element.type.toLowerCase();
-            const elementSelector = `document.forms[${formIndex}].elements[${elementIndex}]`;
+            const codeToRecoverElement = `document.forms[${formIndex}].elements[${elementIndex}]`;
 
             switch (elementType) {
                 case 'text':
@@ -19,15 +17,15 @@
                 case 'number':
                 case 'select-one':
                     const value = JSON.stringify(element.value);
-                    scriptCode.push(`${elementSelector}.value = ${value};`);
+                    scriptCode.push(`${codeToRecoverElement}.value = ${value};`);
                     break;
                 case 'checkbox':
                 case 'radio':
-                    scriptCode.push(`${elementSelector}.checked = ${element.checked};`);
+                    scriptCode.push(`${codeToRecoverElement}.checked = ${element.checked};`);
                     break;
                 case 'select-multiple':
                     [...element.options].forEach((opt, idx) => {
-                        scriptCode.push(`${elementSelector}.options[${idx}].selected = ${opt.selected};`);
+                        scriptCode.push(`${codeToRecoverElement}.options[${idx}].selected = ${opt.selected};`);
                     });
                     break;
                 // Include additional input types as needed
