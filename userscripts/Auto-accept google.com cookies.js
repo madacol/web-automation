@@ -5,6 +5,7 @@
 // @version     1.0
 // @author      madacol
 // ==/UserScript==
+
 document.querySelectorAll('button').forEach(button => {
     if (button.textContent.toLowerCase() === 'accept all') button.click()
 })

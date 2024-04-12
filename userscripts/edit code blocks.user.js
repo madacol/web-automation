@@ -11,11 +11,7 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
-    'use strict';
-
-    document.querySelectorAll('pre').forEach((code_block) => {
-        code_block.contentEditable = true;
-        code_block.spellcheck = false;
-    })
-})();
+document.querySelectorAll('pre').forEach((code_block) => {
+    code_block.contentEditable = true;
+    code_block.spellcheck = false;
+})
