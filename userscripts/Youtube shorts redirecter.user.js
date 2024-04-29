@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube Shorts Redirecter
 // @version      0.3
-// @description  Redirects youtube yhorts to the traditional video player
+// @description  Redirects youtube shorts to the traditional video player
 // @author       madacol
 // @match        *://*.youtube.com/shorts/*
 // @run-at       document-start
