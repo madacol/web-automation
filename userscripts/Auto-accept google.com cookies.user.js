@@ -7,5 +7,9 @@
 // ==/UserScript==
 
 document.querySelectorAll('button').forEach(button => {
-    if (button.textContent.toLowerCase() === 'accept all') button.click()
+    switch (button.textContent.toLowerCase()) {
+        case 'accept all':
+            button.click()
+            break
+    }
 })
