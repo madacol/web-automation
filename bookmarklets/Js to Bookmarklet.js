@@ -1,39 +1,31 @@
 // @name Js to Bookmarklet
-// @description Minify selected JavaScript code and create a bookmarklet link.
+// @description Show a bookmarklet link with the selected JavaScript code.
 
 javascript:(function(){
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/terser/dist/bundle.min.js';
-    script.onload = async function() {
+    // Get selected text
+    const selection = window.getSelection ? window.getSelection().toString() : document.selection.createRange().text;
+    if (!selection) return alert("Please select some JavaScript code to minify.");
 
-        /**
-         * Minify selected JavaScript code
-         */
-        const selection = window.getSelection ? window.getSelection().toString() : document.selection.createRange().text;
-        if (!selection) return alert("Please select some JavaScript code to minify.");
-        const minified = await Terser.minify(selection).catch(e => alert(`Error: ${e.message}`));
+    // Create bookmarklet link
+    const a = document.createElement('a');
+    a.href = `javascript:(()=>{${encodeURIComponent(selection)}})();`;
+    a.textContent = 'Drag to bookmarks bar to save.';
+    a.style.display = 'block';
 
-        /**
-         * Create modal with minified code
-         */
+    // Show link in a modal
+    showModal(a);
+
+    function showModal(HtmlContent) {
         const modal = document.createElement('div');
         const modalContent = document.createElement('div');
-        modal.onclick = (e) => {
-            /* close modal when clicking outside the modalContent */
-            if (e.target === modal) modal.remove();
-        };
+        // close modal when clicking outside of it
+        modal.onclick = e => { if (e.target === modal) modal.remove(); };
 
-        const a = document.createElement('a');
-        a.href = `javascript:(function(){${encodeURIComponent(minified.code)}})();`;
-        a.textContent = 'Drag to bookmarks bar to save.';
-
-        modalContent.appendChild(a);
+        modalContent.appendChild(HtmlContent);
         modal.appendChild(modalContent);
         document.body.appendChild(modal);
 
-        /**
-         * Style modal and content
-         */
+        // Style modal
         modal.style.position = 'fixed';
         modal.style.zIndex = 10000;
         modal.style.left = '0';
@@ -47,7 +39,5 @@ javascript:(function(){
         modalContent.style.backgroundColor = '#fff';
         modalContent.style.padding = '20px';
         modalContent.style.borderRadius = '5px';
-        a.style.display = 'block';
-    };
-    document.body.appendChild(script);
+    }
 })();
