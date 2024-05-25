@@ -1,5 +1,5 @@
-// @name Link to Text Fragment
-// @description Updates URL to link to the selected text on the page.
+// @name Link to selected text
+// @description Creates a link that scrolls to the selected text on the page, and copies it to the clipboard.
 
 javascript:(function() {
     const selection = window.getSelection().getRangeAt(0).toString().trim();
@@ -8,5 +8,8 @@ javascript:(function() {
     }
     const baseUri = window.location.href.split('#')[0];
     const newUrl = `${baseUri}#:~:text=${encodeURIComponent(selection)}`;
-    window.location.href = newUrl;
+
+    // Copy selected text to clipboard
+    navigator.clipboard.writeText(newUrl)
+        .then(() => alert('Link copied to clipboard.'))
 })();
