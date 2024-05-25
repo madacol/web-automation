@@ -1,4 +1,4 @@
-// @name Id Linker
+// @name Show Id Links
 // @description Add anchor links to all elements with an `id` attribute. Clicking the anchors will scroll to the element. Run again to remove anchors.
 
 (function() {
@@ -37,7 +37,7 @@
     const css = `
         a[data-id-linker] {
             position: absolute !important;
-            top: auto !important;
+            top: 0 !important;
             right: 0 !important;
             display: inline-block !important;
             margin: 0 !important;
