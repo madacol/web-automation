@@ -1,5 +1,5 @@
 // @name Form Restorer
-// @description This script stores the values of all form fields in localStorage. When the script is run again, it will ask the user if they want to restore values or replace them with the new ones.
+// @description This script stores the values of all form fields in localStorage. When the script is run again, it will ask the user to restore or replace them with the new ones.
 
 const saveFormValues = () => {
     const formData = [];
