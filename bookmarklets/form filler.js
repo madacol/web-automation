@@ -1,4 +1,4 @@
-// @name Form Filler
+// @name Form Restorer
 // @description This script records the values of all form fields and stores them in localStorage. When the script is run again, it will ask the user if they want to restore values or save the new ones.
 
 const saveFormValues = () => {
