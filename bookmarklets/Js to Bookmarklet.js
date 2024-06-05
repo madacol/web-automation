@@ -1,10 +1,10 @@
 // @name Js to Bookmarklet
 // @description Show a bookmarklet link with the selected JavaScript code.
 
-javascript:(function(){
+(function(){
     // Get selected text
     const selection = window.getSelection ? window.getSelection().toString() : document.selection.createRange().text;
-    if (!selection) return alert("Please select some JavaScript code to minify.");
+    if (!selection) return alert("Please select some JavaScript code.");
 
     // Create bookmarklet link
     const a = document.createElement('a');

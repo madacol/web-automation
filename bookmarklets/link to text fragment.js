@@ -1,7 +1,7 @@
 // @name Link to selected text
 // @description Creates a link that scrolls to the selected text on the page, and copies it to the clipboard.
 
-javascript:(function() {
+(function() {
     const selection = window.getSelection().getRangeAt(0).toString().trim();
     if (!selection) {
         return alert('Please select some text on the page.');

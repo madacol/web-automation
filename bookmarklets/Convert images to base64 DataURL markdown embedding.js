@@ -20,8 +20,7 @@ javascript:(async function(){
     });
   }
 
-  const images = document.getElementsByTagName('img');
-  [...images].forEach(async img => {
+  document.querySelectorAll('img').forEach(async img => {
     let base64;
     try {
       base64 = getBase64Image(img);
