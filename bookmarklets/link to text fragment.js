@@ -11,5 +11,18 @@
 
     // Copy selected text to clipboard
     navigator.clipboard.writeText(newUrl)
-        .then(() => alert('Link copied to clipboard.'))
+        .then(() => {
+            const modal = showModal(document.createTextNode(`Copied to clipboard`));
+            setTimeout(() => modal.remove(), 2000);
+        })
+
+    function showModal(HtmlContent) {
+        const modal = document.createElement('dialog');
+        modal.appendChild(HtmlContent);
+        document.body.appendChild(modal);
+        modal.showModal();
+        // close modal when clicking outside its content
+        modal.onclick = e => { if (e.target === modal) modal.remove(); };
+        return modal
+    }
 })();
