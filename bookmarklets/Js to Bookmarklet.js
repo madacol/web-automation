@@ -6,6 +6,9 @@
     const selection = window.getSelection ? window.getSelection().toString() : document.selection.createRange().text;
     if (!selection) return alert("Please select some JavaScript code.");
 
+    // validate it is valid javascript code
+    try { new Function(selection); } catch (e) { return alert("Invalid JavaScript code selected."); }
+
     // Create bookmarklet link
     const a = document.createElement('a');
     a.href = `javascript:(()=>{${encodeURIComponent(selection)}})();`;
