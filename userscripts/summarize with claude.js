@@ -16,7 +16,7 @@
     const CLAUDE_API_ENDPOINT = "https://api.anthropic.com/v1/messages";
     const MODEL = "claude-3-5-sonnet-20240620";
     const MAX_TOKENS = 4096;
-    const SYSTEM_PROMPT="Summarize";
+    const SYSTEM_PROMPT="Make a comprehensive summary";
 
     async function getApiKey() {
         const apiKey = await GM.getValue("anthropicApiKey", "");
