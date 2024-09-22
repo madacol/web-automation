@@ -1,5 +1,7 @@
 // @name Show Id Links
 // @description Add anchor links to all elements with an `id` attribute. Clicking the anchors will scroll to the element. Run again to remove anchors.
+// @image https://raw.githubusercontent.com/madacol/web-automation/refs/heads/master/bookmarklets/Id%20Linker.1.png
+// @image https://raw.githubusercontent.com/madacol/web-automation/refs/heads/master/bookmarklets/Id%20Linker.2.png
 
 (function() {
     'use strict';
