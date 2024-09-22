@@ -1,5 +1,8 @@
 // @name Highlight Text
 // @description Highlights the selected texts on the page by wrapping them in <mark> tags.
+// @image https://raw.githubusercontent.com/madacol/web-automation/refs/heads/master/bookmarklets/highlight%20text/1.png
+// @image https://raw.githubusercontent.com/madacol/web-automation/refs/heads/master/bookmarklets/highlight%20text/2.png
+// @image https://raw.githubusercontent.com/madacol/web-automation/refs/heads/master/bookmarklets/highlight%20text/3.png
 
 javascript: (function() {
     let selection = window.getSelection();
@@ -78,3 +81,22 @@ javascript: (function() {
     }
 })();
 
+
+/**
+ * TODO
+ * 
+ * apply new highlighting APIs https://developer.mozilla.org/en-US/docs/Web/API/CSS_Custom_Highlight_API
+ * 
+ *  // css
+    ::highlight(my-custom-highlight) {
+        background-color: blue;
+    }
+
+    // js
+    const parentNode = document.getElementById("foo");
+    const range1 = new Range();
+    range1.setStart(parentNode, 10);
+    range1.setEnd(parentNode, 20);
+    const highlight = new Highlight(range1);
+    CSS.highlights.set("my-custom-highlight", highlight);
+ */
