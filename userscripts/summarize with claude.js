@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Summarize with Claude
 // @version      0.1
-// @description  Adds a menu option to summarize using Claude's API
+// @description  This userscript adds a menu option to summarize selected text using Claude's API. I DO NOT RECOMMEND using this as a bookmarklet, you will be exposing your API keys to the webpage.
 // @video        https://raw.githubusercontent.com/madacol/web-automation/refs/heads/master/userscripts/Summarize%20with%20claude.mp4
 // @match        https://*/*
 // @grant        GM.xmlHttpRequest
