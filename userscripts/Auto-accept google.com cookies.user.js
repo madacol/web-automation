@@ -9,6 +9,8 @@
 document.querySelectorAll('button').forEach(button => {
     switch (button.textContent.toLowerCase()) {
         case 'accept all':
+        case 'accetta tutto':
+        case 'aceptar todo':
             button.click()
             break
     }
