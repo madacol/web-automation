@@ -1,0 +1,14 @@
+{
+  "name": "web-automation-bookmarklets",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:bookmarklets": "node scripts/build-general-bookmarklets.js",
+    "test:bookmarklets": "playwright test -c playwright.bookmarklets.config.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.0",
+    "rollup": "4.60.4"
+  },
+  "engines": { "node": ">=24" }
+}
