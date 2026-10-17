@@ -1,6 +1,5 @@
 ---
-status: in_progress
-owner: d5b90ac1/root
+status: done
 ---
 
 # Add five general bookmarklets
@@ -22,4 +21,8 @@ The live condition check was verified against production: false with an empty qu
 
 All five standalone artifacts were generated with pinned Rollup 4.60.4. Ten sandboxed system-Chromium tests pass against the exact artifacts, including actual clipboard writes, selected-content export, draft persistence and sensitive-field exclusions, selected-link deduplication, numeric table sorting/filtering/restoration, reader sanitization/theme controls, and Escape cleanup. The Get Bookmarklets unit suite passes (35 tests); its check command still reports the existing 51 errors and one warning in ten unrelated files.
 
-Next: commit and push the source, shared modules, build tooling, locked development dependencies and browser tests to the existing master branch; verify all five immutable raw URLs before staging their production submissions.
+## Completion
+
+Published all five standalone scripts, shared authoring modules, reproducible build tooling, locked development dependencies, usage/privacy documentation and ten passing browser tests to madacol/web-automation master in commit db7ad690e457857159928c200d5848fe3fa37e9a. All five immutable raw GitHub URLs return HTTP 200, match their locally tested SHA-256 content hashes, and parse as standalone JavaScript. Source publication is complete.
+
+Copy Page as Markdown was added to the production review queue as c8970498-a675-40da-bbbb-4a6bc300a26c. The other four are durably staged in the Get Bookmarklets workspace, where task staged-general-bookmarklets tracks their rate-limited registration. No submission was automatically accepted.
